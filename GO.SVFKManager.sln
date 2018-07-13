@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVFKManager", "GO.SVFKManager\SVFKManager.csproj", "{2BCA2D68-1EB5-4F39-B0A6-1690FC6E380B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVFKManager.Demo", "SVFKManager.Demo\SVFKManager.Demo.csproj", "{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		PCSim|Any CPU = PCSim|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BCA2D68-1EB5-4F39-B0A6-1690FC6E380B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BCA2D68-1EB5-4F39-B0A6-1690FC6E380B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BCA2D68-1EB5-4F39-B0A6-1690FC6E380B}.PCSim|Any CPU.ActiveCfg = PCSim|Any CPU
+		{2BCA2D68-1EB5-4F39-B0A6-1690FC6E380B}.PCSim|Any CPU.Build.0 = PCSim|Any CPU
+		{2BCA2D68-1EB5-4F39-B0A6-1690FC6E380B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BCA2D68-1EB5-4F39-B0A6-1690FC6E380B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.PCSim|Any CPU.ActiveCfg = PCSim|Any CPU
+		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.PCSim|Any CPU.Build.0 = PCSim|Any CPU
+		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F42D65C-DF13-45F2-9AEE-19C5A873CA41}
+	EndGlobalSection
+EndGlobal

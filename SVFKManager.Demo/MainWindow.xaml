@@ -1,0 +1,133 @@
+﻿<Window
+    x:Class="SVFKMgr.Demo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dom="clr-namespace:SVFKMgr.Demo.Domain"
+    xmlns:local="clr-namespace:SVFKManager.Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mgr="clr-namespace:GO.Utilities.VFK.Enumerations;assembly=SVFKManager"
+    Title="SVFKManager"
+    Height="555"
+    SizeToContent="Width"
+    mc:Ignorable="d">
+
+    <Grid x:Name="Grid1" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Margin="0,10"
+            FontSize="16"
+            FontWeight="Bold"
+            Text="Side Vertical Function Keys" />
+        <ListBox
+            x:Name="icButtons"
+            Grid.Row="1"
+            ItemsSource="{Binding SVFKManager.Buttons}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Margin="3"
+                        Padding="3"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <TextBlock VerticalAlignment="Center" Text="Path:" />
+
+                            <StackPanel
+                                Grid.Column="1"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <TextBox Width="200" Text="{Binding FilePath, Mode=TwoWay}" />
+                                <Button
+                                    Grid.Column="1"
+                                    Width="24"
+                                    Margin="3,0,0,0"
+                                    Command="{Binding DataContext.Browse, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"
+                                    CommandParameter="{Binding}"
+                                    Content="..." />
+                            </StackPanel>
+                            <TextBlock
+                                Grid.Row="1"
+                                VerticalAlignment="Center"
+                                Text="Display Name:" />
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Width="100"
+                                Margin="3,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{Binding DisplayName, Mode=TwoWay}" />
+                            <TextBlock
+                                Grid.Row="2"
+                                VerticalAlignment="Center"
+                                Text="Arguments:" />
+                            <TextBox
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Width="100"
+                                Margin="3,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{Binding Arguments, Mode=TwoWay}" />
+                            <TextBlock
+                                Grid.Row="3"
+                                VerticalAlignment="Center"
+                                Text="Startup Mode:" />
+                            <ComboBox
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Width="130"
+                                Margin="3,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                ItemsSource="{Binding Source={dom:EnumBindingSource {x:Type mgr:VKeyStartMode}}}"
+                                SelectedItem="{Binding StartMode, Mode=TwoWay}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox>
+
+        <StackPanel
+            Grid.Row="2"
+            Margin="0,10,0,0"
+            Orientation="Vertical">
+            <Button
+                x:Name="btnSave"
+                Margin="0,10"
+                Click="btnSave_Click"
+                Content="Save Buttons" />
+            <Button
+                x:Name="btnRestart"
+                Margin="0,0,0,10"
+                Click="btnRestart_Click"
+                Content="Restart SVFKA.exe" />
+            <Button
+                x:Name="btnResetIni"
+                Margin="0,0,0,10"
+                Click="btnResetIni_Click"
+                Content="Reset Ini File" />
+            <Button
+                x:Name="btnShowIni"
+                Margin="0,0,0,10"
+                Click="btnShowIni_Click"
+                Content="Show Ini File" />
+        </StackPanel>
+
+    </Grid>
+</Window>
