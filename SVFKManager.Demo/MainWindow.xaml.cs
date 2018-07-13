@@ -16,7 +16,7 @@
         {
             InitializeComponent();
             DataContext = this;
-            SVFKManager = new GO.Utilities.VFK.SVFKManager();
+            SVFKManager = new SVFKManager();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
