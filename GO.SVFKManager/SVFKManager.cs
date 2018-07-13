@@ -17,20 +17,24 @@
 
         readonly IniFile _iniFile;
         readonly string _iniPath;
-
-        public SVFKManager()
+        public SVFKManager(string iniPath = @"C:\PBU-DAT\SVFKA-USR.INI")
         {
-            _iniPath = @"C:\PBU-DAT\SVFKA-USR.INI";
-            if(!SVFKFileInfo.Exists)
+            _iniPath = iniPath;
+
+            if (!SVFKFileInfo.Exists)
             {
                 throw new FileNotFoundException($"Unable to locate SVFKA ini file @ {_iniPath}");
             }
+
             _iniFile = new IniFile(_iniPath);
+
             _buttons = LoadButtons();
         }
 
         List<SVFKButton> LoadButtons()
         {
+
+            
             var rtnList = new List<SVFKButton>();
 
 
@@ -126,7 +130,7 @@
             {
                 if(SVFKFileInfo.Exists)
                 {
-                    File.Copy(_iniPath, Path.Combine(@"C:\PBU-DAT", "SVFKA-USR.INI.CORRUPT"), true);
+                    File.Copy(_iniPath, Path.Combine(SVFKFileInfo.Directory.FullName, "SVFKA-USR.INI.CORRUPT"), true);
                     File.WriteAllText(_iniPath, Resources.DefaultIni, Encoding.ASCII);
                     _buttons = LoadButtons();
                 }
@@ -159,11 +163,28 @@
             }
         }
 
+       /// <summary>
+       /// Reloads the button list from disk
+       /// </summary>
+        public void RefreshButtons()
+        {
+            _buttons = LoadButtons();
+        }
+
         public ReadOnlyCollection<SVFKButton> Buttons => new ReadOnlyCollection<SVFKButton>(_buttons);
 
         /// <summary>
         /// FileInfo for SVFKA-USR.INI. Use this to backup the file if desired.
         /// </summary>
-        public FileInfo SVFKFileInfo => new FileInfo(_iniPath);
+
+      public FileInfo SVFKFileInfo
+        {
+            get
+            {
+                return new FileInfo(_iniPath);
+            }
+           
+        }
+       
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVFKManager", "GO.SVFKManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVFKManager.Demo", "SVFKManager.Demo\SVFKManager.Demo.csproj", "{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVFKManager.Tests", "SVFKManager.Tests\SVFKManager.Tests.csproj", "{3D65B81C-3D53-43C8-B927-354A47C4F42A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,12 @@ Global
 		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.PCSim|Any CPU.Build.0 = PCSim|Any CPU
 		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AC5B9AE-CCA6-4CCD-B7CB-5FCD2E1009F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D65B81C-3D53-43C8-B927-354A47C4F42A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D65B81C-3D53-43C8-B927-354A47C4F42A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D65B81C-3D53-43C8-B927-354A47C4F42A}.PCSim|Any CPU.ActiveCfg = Release|Any CPU
+		{3D65B81C-3D53-43C8-B927-354A47C4F42A}.PCSim|Any CPU.Build.0 = Release|Any CPU
+		{3D65B81C-3D53-43C8-B927-354A47C4F42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D65B81C-3D53-43C8-B927-354A47C4F42A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
