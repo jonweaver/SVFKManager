@@ -162,10 +162,13 @@
                 }
             }
         }
+        
+        
 
-       /// <summary>
-       /// Reloads the button list from disk
-       /// </summary>
+
+        /// <summary>
+        /// Reloads the button list from disk
+        /// </summary>
         public void RefreshButtons()
         {
             _buttons = LoadButtons();
